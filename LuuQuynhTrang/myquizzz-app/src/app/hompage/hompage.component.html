@@ -1,0 +1,83 @@
+<section class="main-menu">
+    <div class="top-menu" style="width: 100%; height: 90px;">
+        <div class="container">
+            <ul>
+                <li>
+                    <a href="">
+                        <div class="logo"></div>
+                    </a>                
+                </li>
+                <li>
+                    <div class="d-flex h-100">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Tìm kiếm...">
+                            <a style="text-decoration: none" href="#" class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" style="float: right" [routerLink]="['register']">
+                        <div class="signup-btn kr-push-btn">Đăng ký</div>
+                    </a>               
+                </li>
+                <li>
+                    <a href="#" style="float: right; color: white;
+                    vertical-align: middle; font-weight: bold;margin-top: -19px; margin-right: 20px" [routerLink]="['login']">
+                        Đăng nhập
+                    </a>
+                </li>
+            </ul>
+        </div>     
+        
+    </div>
+</section>
+<section class="list-quiz">
+    <div class="container">
+        <div class="list-title">
+                <h2>Câu hỏi nổi bật</h2>
+        </div>
+        <div class="row" style="margin-bottom: 30px" [routerLink]="['game', data._id]" *ngFor="let data of quizs; let i = index">
+            <!-- <div class="logo-quiz col-lg-2 offset-lg-1" >
+                <img src="assets/images/thu1.jpg" alt="can't load">
+            </div> -->
+            <div class="infor-quiz col-lg-7 clearfix">
+                <a >
+                    <img src="assets/images/maru.jpg" alt="can't load">
+                </a>
+                <div style="margin-left: 20px;">
+                    <a href="#">
+                        <h4>{{ data.title}}</h4>
+                    </a>
+                    <p><small><i>Đăng bởi: {{ data.postby}}</i></small></p>
+                    <i class="fa fa-heart" aria-hidden="true" style="color: crimson"></i>
+                    <small style="margin-left: 5px; font-size: 15px;">{{ data.like}}</small>
+                </div>
+            </div>
+        </div>  
+    </div>
+</section>
+<section class="footer">
+    <div class="container">
+        <div class="row">
+          <div class="contact col-md-4 offset-md-2">
+              <h5><strong>Contact us</strong></h5>
+              <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+              <i class="fa fa-facebook-official fa-2x" aria-hidden="true" style="margin-left: 10px"></i>
+              <i class="fa fa-envelope fa-2x" aria-hidden="true" style="margin-left: 10px;"></i>
+              <p>or</p>
+              <div>
+                    <i class="fa fa-phone-square fa-x" aria-hidden="true">
+                        <small style="font-size: 15px;">  0966 666 888</small>
+                    </i>
+              </div>
+          </div>
+          <div class="infor col-md-4 offset-md-1">
+              <h5>Địa chỉ</h5>
+              <small>Số 1 Xuân Thủy, Cầu Giấy, Hà Nội</small>
+          </div>
+        </div>
+        <!-- <div class="row">
+            
+        </div> -->
+      </div>
+</section>

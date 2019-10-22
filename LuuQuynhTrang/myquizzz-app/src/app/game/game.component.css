@@ -1,0 +1,207 @@
+a{
+    text-decoration: none;
+}
+.top-menu{
+    height: 55px;    
+    background-color:  #db8b0b;
+    transition: all 0.2s;
+   
+}
+.start-body{
+    padding-top: 100px;
+    width: 100%;
+    min-height: 570px;
+    /* background-color: #FFB53C; */
+}
+.start{
+    margin-top: 50px;
+    margin-left: 605px;
+    font-size: 30px;
+    color: white;
+    font-family: Quicksand,Helvetica,Arial;
+    background-color: #FFB53C;
+    border-radius: 10px;  
+    width: 150px;
+    height: 70px;    
+}
+.info-quiz{
+    /* color: white; */
+    font-family: Quicksand,Helvetica,Arial;
+    text-align: center;
+}
+.top-menu ul>li{
+    display: block;
+    
+    text-decoration: none;
+    color: white;
+    height: 15px;
+    line-height: 40px;
+    padding: 0 5px;
+    
+} 
+.logo{
+    float: left;
+}
+.main-menu ul>li{
+    display: block;
+    
+    text-decoration: none;
+    color: white;
+    height: 15px;
+    line-height: 40px;
+    padding: 0 5px;
+    
+} 
+.timer{
+    float: left;
+    /* display: inline-block; */
+    margin-top: -30px;
+}
+
+.signup-btn{
+    
+    width: 108px;
+    height: 44px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: #FFB53C;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -50px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+} 
+/* //body */
+/* #questionn{
+    width: 100% !important;
+    height: 400px !important;
+    background-color: #FFB53C;
+} */
+
+.content-ques{
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    /* background-color: #FFB53C; */
+    /* color: white; */
+    font-family: Quicksand,Helvetica,Arial;
+    min-height: 265px;
+}
+.content-ques p{
+    
+}
+.answer{
+    /* margin-top: 50px; */
+    /* border-radius: 8px;    */
+    /* border: 10px solid rgb(250, 192, 99); */
+    /* background-color: rgb(250, 192, 99); */
+    display: flex;
+}
+.answ-1{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-family: Quicksand,Helvetica,Arial;
+    background-color: #2F6DAE;
+    border-radius: 10px;  
+    margin-left: 3px;
+    justify-content: center;
+    align-items: center;   
+    margin-right: 18px;
+    width: 317px;
+    min-height: 285px;    
+    display: flex;
+}
+.answ-2{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-family: Quicksand,Helvetica,Arial;
+    border-radius: 10px;  
+    justify-content: center;
+    align-items: center;
+    width: 317px;
+    min-height: 285px;
+    margin-right: 18px;    
+    background-color: #66CCC6;
+    display: flex;
+}
+.answ-3{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-family: Quicksand,Helvetica,Arial;
+    border-radius: 10px;  
+    width: 317px;
+    margin-right: 18px;
+    justify-content: center;
+    align-items: center;
+    min-height: 285px;
+    background-color: #D4546A;
+    display: flex;
+}
+.answ-4{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-family: Quicksand,Helvetica,Arial;
+    justify-content: center;
+    align-items: center;
+    width: 317px;
+    min-height: 285px;    
+    background-color: #3A1F3C;
+    display: flex;
+    border-radius: 10px;  
+}
+
+/* result */
+.infor-quiz{
+    background-color: white;
+    /* height: 160px; */
+    display: flex;
+    float: right;
+    border: 2px solid #EAEFF2;
+    border-radius: 8px;
+}
+.infor-quiz img{
+    margin-top: 7px;
+    /* margin-left: 10px; */
+    height: 140px;
+    width: 170px;
+    margin-bottom: 7px;
+}
+.infor-quiz a{
+    color: #292A3A;
+}
+.infor-quiz h4{
+    color: #292A3A;
+    /* margin-left: 10px; */
+    margin-top: 15px;
+}
+.result-body{
+    display: flex;
+    height: 85vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: #FFB53C; */
+}
+.score{
+    /* color: white; */
+    align-content: center;
+    font-family: Quicksand,Helvetica,Arial;
+
+}
+.suggest h4{
+    /* color: white; */
+    font-family: Quicksand,Helvetica,Arial;
+}
+/* .answer p{
+    
+    font-size: 32px;
+   
+    
+} */

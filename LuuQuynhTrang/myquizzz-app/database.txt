@@ -1,0 +1,50 @@
+collection hashtag:
+{
+	_id: ObjectId,
+	title: String
+}
+
+collection quiz:
+{
+	_id:ObjectId,
+	title: String,
+	num_of_ques: INT,
+	likes: INT,
+	hashtag: [tag1, tag2, tag3]
+	post_by: ObjectId
+
+}
+
+
+collection question:
+{
+	_id: ObjectId,
+	title: String,	
+	quiz_id: ObjectId,		
+	answer: [
+		0:ObjectId(answer1),
+		1:ObjectId(answer2),
+		2:ObjectId(answer3),
+		3:ObjectId(answer3),
+	]
+}
+
+collection user:
+{
+	_id: ObjectId,
+	name: STring,
+	email: String,
+	score: INT,
+}
+collection answer:{
+	_id: ObjectId,
+	key: int
+
+collection quiz_user:
+{
+	_id: ObjectId,
+	id_user: ObjectId,	
+	id_quizz: ObjectId,	
+	score: INT,
+	time VARCHAR
+}

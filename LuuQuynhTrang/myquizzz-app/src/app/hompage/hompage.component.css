@@ -1,0 +1,170 @@
+
+a{
+    text-decoration: none;
+}
+.main-menu{
+    width: 100%px;
+    height: 600px;
+    background: url('../../assets/images/study.jpg');
+    background-size: cover;
+}
+.top-menu{
+    /* position: fixed; */
+    /* background-color: white; */
+    transition: all 0.2s;
+}
+.logo{
+    width: 90px;
+    height: 90px;
+    background: url('../../assets/images/gulogo.jpg');
+    background-size: cover;
+    float: left;
+}
+.main-menu ul>li{
+    display: block;
+    /* float: right; */
+    text-decoration: none;
+    color: #FA3D3D;
+    height: 15px;
+    line-height: 40px;
+    padding: 0 5px;
+    /* display: block; */
+}
+.searchbar{
+    margin-left: 30px;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 55px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.search_input{
+    color: #e74c3c;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 50px;
+    margin-top: -7px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 350px;
+    caret-color:red;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon{
+    height: 35px;
+    width: 35px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:#e74c3c;
+}
+.signup-btn{
+    width: 108px;
+    height: 44px;
+    padding: 0;
+    line-height: 44px;
+    border-radius: 8px;
+    background-color: rgb(135, 221, 161);
+    display: inline-block;
+    vertical-align: middle;
+    /* margin: 0 24px 0 16px; */
+    margin-top: -12px;
+    text-align: center;
+    /* border-radius: 4px; */
+    font-weight: bold;
+    color: white;
+}
+.signup-btn:hover{
+    background:  #00C985;
+    /* color: #FFD1E1; */
+}
+/* body */
+.list-title{
+    margin-top : 50px;
+    color: #292A3A;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 50px;
+}
+
+.list-quiz{
+    width: 100%;
+    /* height: 700px; */
+    background-color: white;
+}
+.quizz{
+    height: 150px;
+    background-color: #00C985;
+}
+.logo-quiz img{
+    /* background: url('images/thu1.jpg'); */
+    /* background-size: cover; */
+    height: 140px;
+    float: left;
+
+}
+.quangcao{
+    /* height: 200px; */
+    background: url('../../assets/images/quangcao.png')
+}
+.infor-quiz{
+    /* background-color: greenyellow; */
+    /* height: 160px; */
+    display: flex;
+    float: right;
+    border: 2px solid #EAEFF2;
+    border-radius: 8px;
+}
+.infor-quiz img{
+    margin-top: 7px;
+    /* margin-left: 10px; */
+    height: 140px;
+    width: 170px;
+    margin-bottom: 7px;
+}
+.infor-quiz a{
+    color: #292A3A;
+}
+.infor-quiz h4{
+    color: #292A3A;
+    /* margin-left: 10px; */
+    margin-top: 15px;
+}
+/* footer */
+.footer{
+    background-color: #FFB53C;
+    width: 100%;
+    height: 300px;
+}
+.contact{
+    float: left;
+    color: white;
+    margin-top: 40px;
+}
+.infor{
+    float: right;
+    color: white;
+    margin-top: 40px;
+}
+
+
+
+    

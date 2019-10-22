@@ -1,0 +1,84 @@
+<div class="quiz"  id="quiz" style="display: none">
+    <div class="main-menu">
+        <div class="top-menu" style="width: 100%; height: 55px;">
+            <ul>
+                <li>                        
+                    <div class="logo">
+                        <p id="progress"></p>
+                    </div>              
+                </li>
+                <li>
+                   <p id="score" style="margin-top: -15px;padding-left: 70px;"></p>
+                </li>
+                <li>
+                    <a href="#" style="float: right" [routerLink]="['']">
+                        <div class="signup-btn kr-push-btn" >Thoát</div>
+                    </a>               
+                </li>
+                
+            </ul>
+        
+        </div>
+    </div>
+    <div class="main-body">
+        <div class="content-ques">
+            <h4 id="question"></h4>
+        </div>
+        <div class="answer">
+            <div >
+                <button id="btn0" class="answ-1 ans" anw="0" ></button>
+            </div>
+            <div >
+                <button id="btn1" class="answ-2 ans" anw="1"></button>
+            </div>
+            <div >
+                <button id="btn2" class="answ-3 ans" anw="2"></button>
+            </div>
+            <div>
+                <button id="btn3"  class="answ-4 ans" anw="3"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="result" id="result" style="display: none">
+    <div class="top-menu">
+        <ul>
+            <li>
+                <a href="#" style="float: right; margin-top: 30px" [routerLink]="['']">
+                    <div class="signup-btn kr-push-btn">Thoát</div>
+                </a>               
+            </li>
+        </ul>        
+    </div>
+    <div class="result-body">
+        <div class="container">
+            <div class="score">
+                <h4>Điểm của bạn là:</h4>
+                <p id="score_result"></p>
+            </div>
+        </div>              
+    </div>
+</div>
+
+<div class="countdown" id="countdown" style="display: block">
+    <!-- <div class="top-menu">
+        <ul>
+            <li>
+                <a href="#" style="float: right; margin-top: 30px" [routerLink]="['']">
+                    <div class="signup-btn kr-push-btn">Thoát</div>
+                </a>               
+            </li>
+        </ul>        
+    </div> -->
+    
+    <div class="start-body">
+        <div class="container info-quiz">
+            <h4>Bạn hiểu biết bao nhiêu về các loài chó?</h4>
+            <p>Số câu hỏi: 5</p>
+        </div>
+        <button id="start" class="start" >start</button>
+    </div>
+</div>
+
+
