@@ -1,0 +1,91 @@
+a{
+    text-decoration: none;
+}
+.top-menu{
+    /* position: fixed; */
+    height: 70px;
+    background-color:  #FFB53C;
+    transition: all 0.2s;
+   
+}
+.logo{
+    width: 70px;
+    height: 70px;
+    background: url('../assets/images/gulogo.jpg');
+    background-size: cover;
+    float: left;
+}
+.main-menu ul>li{
+    display: block;
+    /* float: right; */
+    text-decoration: none;
+    color: #FA3D3D;
+    height: 15px;
+    line-height: 40px;
+    padding: 0 5px;
+    /* display: block; */
+}
+.searchbar{
+    margin-left: 30px;
+    margin-bottom: auto;
+    margin-top: -5px;
+    height: 45px;
+    background-color: white;
+    border-radius: 90px;
+    padding: 5px;
+}
+
+.search_input{
+    color: #e74c3c;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 50px;
+    margin-top: -7px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 350px;
+    caret-color:red;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon{
+    height: 35px;
+    width: 35px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:#e74c3c;
+}
+.signup-btn{
+    width: 90px;
+    height: 40px;
+    padding: 0;
+    line-height: 44px;
+    border-radius: 8px;
+    background-color: rgb(135, 221, 161);
+    display: inline-block;
+    vertical-align: middle;
+    /* margin: 0 24px 0 16px; */
+    margin-top: -34px;
+    text-align: center;
+    /* border-radius: 4px; */
+    font-weight: bold;
+    color: white;
+}
+.signup-btn:hover{
+    background:  #00C985;
+    /* color: #FFD1E1; */
+}

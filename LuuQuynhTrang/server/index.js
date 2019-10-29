@@ -8,7 +8,9 @@ const User = require('./models/user');
 const db = require('./api/db');
 const bcrypt = require('bcrypt');
 var cors = require('cors');
-
+// var expressJwt = require('express-jwt');
+var jwt = require('jsonwebtoken');
+process.env.SECRET_KEY = 'secret'
 
 const app = express();
 
@@ -31,7 +33,7 @@ const app = express();
 app.use(function(req, res, next){
   res.header('Access-Control-Allow-Origin', "*");
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   next();
 });
 module.exports = app;
@@ -78,31 +80,72 @@ app.get('/user/:_id', (req, res) => {
     })
 });
 app.post('/register', (req, res) => {
-    // bcrypt.hash(req.body.password, 10, function (err, hash){
-    //     if (err) {
-    //       return next(err);
-    //     }
-    //     req.body.password = hash;
-    //     next();
-    // })
-
-    const password = bcrypt.hashSync(req.body.password, 10);
-
-    var user = new User({
-        // _id: req.body.ID,
-        
+    var userData = new User({        
         name: req.body.name,
         email: req.body.email,
-        password: password,
+        password: req.body.password,
         role: req.body.role
     });
-    // result = User.addUser(user);
-    user.save().then((user) => {
-      res.send(user);
-    }, (e) => {
-      res.status(400).send(e);
-    });
+    User.findOne({
+      email: req.body.email
+    }).then(user=>{
+      if(!user){
+        bcrypt.hash(req.body.password, 10, (err, hash)=>{
+          userData.password = hash
+          userData.save().then((user) => {
+            res.send(user);
+          }, (e) => {
+            res.status(400).send(e);
+          });
+        })      
+        
+      }else{
+        res.json({error:'User already exists'})
+      }
+    }).catch(err=>{
+      res.send('error: '+err)
+    })
+    
 });
+app.post('/login', (req,res)=>{
+  User.findOne({
+    email:req.body.email
+  }).then(user=>{
+    if(user){
+      if(bcrypt.compareSync(req.body.password, user.password)){
+        const payload = {
+          _id: user._id,
+          name: user.name,
+          email: user.email
+        }
+        let token = jwt.sign(payload, process.env.SECRET_KEY, {
+          expiresIn: 1440
+        })
+        res.json({token:token})
+      }else{
+        res.json({error:"User dose not exist"})
+      }
+    }else{
+      res.json({error:"User dose not exist"})
+    }
+  }).catch(err=>{
+    res.send('error: '+err);
+  })
+});
+app.get('/profile', (req,res)=>{
+  var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY);
+  User.findOne({
+    _id: decoded._id
+  }).then(user=>{
+    if(user){
+      res.json(user)
+    }else{
+      res.send("User does not exists")
+    }
+  }).catch(err=>{
+    res.send('error: '+err)
+  })
+})
 app.post('/makequiz', (req, res) => {
   var quiz = new Quiz({      
       title: req.body.title,

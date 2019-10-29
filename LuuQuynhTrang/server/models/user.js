@@ -5,8 +5,8 @@ const db = require('../api/db');
 var userSchema = new Schema({
     name: {
         type: String, 
-        required: true, 
-        unique: true},
+        required: true 
+        },
     email: {
         type: String, 
         required: true, 
@@ -18,7 +18,11 @@ var userSchema = new Schema({
     },
     role:{
         type: Number,
-        required: true
+        default: 600
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 module.exports = mongoose.model('users', userSchema);
