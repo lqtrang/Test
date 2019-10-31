@@ -28,11 +28,11 @@ export class RegisterComponent implements OnInit {
       email: new FormControl("", Validators.required),
       password: new FormControl("", Validators.compose([
         Validators.required,
-        Validators.minLength(8)
+        Validators.minLength(6)
       ])),
       confirm:new FormControl("", Validators.compose([
         Validators.required,
-        Validators.minLength(8),
+        Validators.minLength(6),
       ]))
     },{
       validators:comparePassword

@@ -7,9 +7,6 @@ var quizSchema = new Schema({
         type: String, 
         required: true, 
         unique: true},
-    like: {
-        type: Number, 
-    },
     tags:{
         type: Array,
     },

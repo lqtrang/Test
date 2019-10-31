@@ -1,0 +1,13 @@
+.list-title{
+    margin-top : 50px;
+    color: #292A3A;
+    font-size: 40px;
+    font-weight: bold;
+    /* text-align: center; */
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 50px;
+}
+.infor-quiz{
+    border: 2px solid #EAEFF2;
+    border-radius: 8px;
+}

@@ -33,15 +33,22 @@ export class LoginComponent implements OnInit {
     
   }
   login() {
-    console.log("aa");
-    this.auth.login(this.credentials).subscribe(
-      ()=>{
-        this.router.navigateByUrl('/profile')
-      },
-      err=>{
-        console.error(err)
-      }
-    )
+    
+      this.auth.login(this.credentials).subscribe(
+        ()=>{
+          this.router.navigateByUrl('/profile')
+        },
+        err=>{
+          
+          console.error(err)
+        }
+      )
+    
+    
+    // console.log( this.auth.login(this.credentials));
+      
+    
+    
   }
 
 }

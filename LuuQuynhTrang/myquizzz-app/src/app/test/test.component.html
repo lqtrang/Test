@@ -1,49 +1,39 @@
+<app-header></app-header>
 <div class="start" id="start">
     <div class="container">
             <div class="row">
                 <div class="start-form col-lg-6 offset-lg-3">
-                        <form style="margin-left: 30px; margin-right: 30px" [formGroup] = "form" (ngSubmit) = "register(form.value)" >
-                                <div class="title-login">
-                                    <h4>Chào mừng tới SU'S</h4>
+                        <form style="margin-left: 30px; margin-right: 30px" >
+                                <div class="title-login" style="margin-top: 10px;">
+                                    <h4>Cùng nhau tạo ra những câu hỏi bổ ích!</h4>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Tên
+                                    <label for="exampleInputEmail1">Tiêu đề
                                         <small>*</small>
                                     </label>
-                                    <!-- <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Nhập email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required> -->
-                                    <input type="text" name="name" class="form-control" id="" aria-describedby="nameHelp" placeholder="name" formControlName="name" [(ngModel)]="credentials.name">
+                                    
+                                    <input type="text" name="title" class="form-control" id="title" placeholder="Tiêu đề" [(ngModel)]="quiz.title" >
                                     <small id="emailHelp" class="form-text text-muted" ></small>
                                   </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Email
+                                  <label for="exampleInputEmail1">Số câu hỏi
                                       <small>*</small>
                                   </label>
-                                  <!-- <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Nhập email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required> -->
-                                  <input type="email" name="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="email" formControlName="email" [(ngModel)]="credentials.email">
+                                  
+                                  <input type="text" name="num" class="form-control" id="num" placeholder="Số câu hỏi" [(ngModel)]="quiz.num_of_ques">
                                   <small id="emailHelp" class="form-text text-muted" ></small>
                                 </div>
                                 <div class="form-group">
-                                        <label for="exampleInputPassword1">Mật khẩu
-                                            <small>*</small>
-                                            <small style="color: black;"> (Độ dài tối thiểu là 8 kí tự)</small>
-                                        </label>
-                                        <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required> -->
-                                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Mật khẩu" name ="password" formControlName="password" [(ngModel)]="credentials.password">
-                                        <small id="passwordHelp" class="form-text text-muted" ></small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Mật khẩu
-                                        <small>*</small>
-                                        <small style="color: black;"> (Độ dài tối thiểu là 8 kí tự)</small>
+                                    <label for="exampleInputEmail1">Thể loại
+                                      <small>*</small>
                                     </label>
-                                    <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required> -->
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu" name ="confirm" formControlName="confirm" >
-                                    <small id="passwordHelp" class="form-text text-muted" ></small>
-                            </div>
-                                <!-- <a routerLink="/"> -->
+                                    <div class="checkbox" *ngFor="let tag of quiz_tag; let i = index">
+                                        <label><input type="checkbox" value="{{tag._id}}" class="hashtag">{{tag.title}}</label>
+                                    </div>
+                                </div>
                                 <a>
                                     <!-- <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="onSubmit()" >Đăng nhập</button> -->
-                                    <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" [disabled] = "!form.valid" >Đăng nhập</button>
+                                    <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="letStart()" >Bắt đầu</button>
                                 </a>
                                 
                          </form>
@@ -53,4 +43,50 @@
             
         </div>
 
+</div>
+<div class="question" id="question" style="display: none;">
+    <div class="container col-lg-6 offset-lg-3 questionbb">
+        <form>
+            <div class="form-group" style="margin-top: 10px;">
+                <h5>Câu hỏi {{index+1}}</h5>
+                <input type="text" class="form-control" id="title-ques" placeholder="Nhập câu hỏi">                      
+            </div>
+            <div class="form-group">
+                    <h5>Câu trả lời</h5>
+                <br>
+                <small>Hãy tích chọn đáp án đúng</small>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <input type="text" class="form-control" id="ans1"  placeholder="Câu trả lời thứ nhất" >
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <input type="text" class="form-control" id="ans2"  placeholder="Câu trả lời thứ hai" >
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <input type="text" class="form-control" id="ans3" placeholder="Câu trả lời thứ ba" >
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+                <input type="text" class="form-control" id="ans4" placeholder="Câu trả lời thứ tư" >
+            </div>                        
+            <a>
+                    <!-- <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="onSubmit()" >Đăng nhập</button> -->
+                <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="restart()">Tiếp tục</button>
+            </a>
+           
+        </form>
+        
+    </div>
+</div>
+<div class="end container" id="end" style="display: none;">
+    <h4 style="text-align: center;">Chúc mừng bạn đã tạo xong một bộ câu hỏi</h4>
+    <a routerLink='/'>  
+        <button  class="out" >Kết thúc</button>
+    </a>
 </div>

@@ -2,14 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const db = require('../api/db');
 var questionSchema = new Schema({
-    title: {
+    
+    title_ques: {
         type: String, 
         required: true, 
         unique: true},
-    answers:{
+    answer:{
         type: Array
     },
-    correct_ans:{
+    key:{
         type: String,
         required: true
     }

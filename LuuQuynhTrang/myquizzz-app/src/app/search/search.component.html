@@ -1,10 +1,24 @@
+<app-header></app-header>
+  
+<div class="container">
+  <div class="title-login" style="margin-top: 10px;">
+    <h4>Kết quả tìm kiếm cho {{valueS}}</h4>
+  </div>
+  <div >
+  <div routerLink='/game/{{data._id}}' *ngFor="let data of datasearch; let i = index" id="result">
+    
+      <div class="infor-quiz col-lg-6 clearfix">
+        <div style="margin-left: 20px;">          
+            <h4>{{ data.title}}</h4>         
+          <p><small><i>Số câu hỏi: {{ data.num_of_ques}}</i></small></p>
+        </div>
+      
+      <!-- <h5 >{{ data.title}}</h5> -->
+    </div>    
+  </div>
+  </div>
+</div>
 
-  <!-- <form action="https://www.example.com/search">
-    <input type="search" id="q" name="q" size=60>
-    <button value="Click to Speak" (click)="start()">aaaaa</button>
-  </form> -->
-
-  <div class="words" contenteditable></div>
 
   
 

@@ -1,25 +1,111 @@
+<app-header></app-header>
 <section class="main-menu">
 </section>
 <section class="list-quiz">
     <div class="container">
         <div class="list-title">
-                <h2>Câu hỏi nổi bật</h2>
+                <h2>Tiểu học</h2>
         </div>
-        <div class="row" style="margin-bottom: 30px" [routerLink]="['game', data._id]" *ngFor="let data of quizs; let i = index">
+        <div class="row" style="margin-bottom: 30px" [routerLink]="['game', data_tieuhoc._id]" *ngFor="let data_tieuhoc of quizs_tieuhoc; let i = index">
             <!-- <div class="logo-quiz col-lg-2 offset-lg-1" >
                 <img src="assets/images/thu1.jpg" alt="can't load">
             </div> -->
-            <div class="infor-quiz col-lg-7 clearfix">
-                <a >
+            <div class="infor-quiz col-lg-6 clearfix">
+                <!-- <a >
                     <img src="assets/images/maru.jpg" alt="can't load">
-                </a>
+                </a> -->
                 <div style="margin-left: 20px;">
                     <a href="#">
-                        <h4>{{ data.title}}</h4>
+                        <h4>{{ data_tieuhoc.title}}</h4>
                     </a>
-                    <p><small><i>Đăng bởi: {{ data.postby}}</i></small></p>
-                    <i class="fa fa-heart" aria-hidden="true" style="color: crimson"></i>
-                    <small style="margin-left: 5px; font-size: 15px;">{{ data.like}}</small>
+                    <p><small><i>Số câu hỏi: {{ data_tieuhoc.num_of_ques}}</i></small></p>
+                   
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="container">
+        <div class="list-title">
+            <h2>Toán học</h2>
+        </div>
+        <div class="row" style="margin-bottom: 30px" [routerLink]="['game', data_toanhoc._id]" *ngFor="let data_toanhoc of quizs_toanhoc; let i = index">
+            <!-- <div class="logo-quiz col-lg-2 offset-lg-1" >
+                <img src="assets/images/thu1.jpg" alt="can't load">
+            </div> -->
+            <div class="infor-quiz col-lg-6 clearfix">
+                <!-- <a >
+                    <img src="assets/images/maru.jpg" alt="can't load">
+                </a> -->
+                <div style="margin-left: 20px;">
+                    <a href="#">
+                        <h4>{{ data_toanhoc.title}}</h4>
+                    </a>
+                    <p><small><i>Số câu hỏi: {{ data_toanhoc.num_of_ques}}</i></small></p>
+                   
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="container">
+        <div class="list-title">
+                <h2>Hóa học</h2>
+        </div>
+        <div class="row" style="margin-bottom: 30px" [routerLink]="['game', data_hoahoc._id]" *ngFor="let data_hoahoc of quizs_hoahoc; let i = index">
+            <!-- <div class="logo-quiz col-lg-2 offset-lg-1" >
+                <img src="assets/images/thu1.jpg" alt="can't load">
+            </div> -->
+            <div class="infor-quiz col-lg-6 clearfix">
+                <!-- <a >
+                    <img src="assets/images/maru.jpg" alt="can't load">
+                </a> -->
+                <div style="margin-left: 20px;">
+                    <a href="#">
+                        <h4>{{ data_hoahoc.title}}</h4>
+                    </a>
+                    <p><small><i>Số câu hỏi: {{ data_hoahoc.num_of_ques}}</i></small></p>
+                   
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="container">
+        <div class="list-title">
+                <h2>Động vật</h2>
+        </div>
+        <div class="row" style="margin-bottom: 30px" [routerLink]="['game', data_dongvat._id]" *ngFor="let data_dongvat of quizs_dongvat; let i = index">
+            <!-- <div class="logo-quiz col-lg-2 offset-lg-1" >
+                <img src="assets/images/thu1.jpg" alt="can't load">
+            </div> -->
+            <div class="infor-quiz col-lg-6 clearfix">
+                <!-- <a >
+                    <img src="assets/images/maru.jpg" alt="can't load">
+                </a> -->
+                <div style="margin-left: 20px;">
+                    <a href="#">
+                        <h4>{{ data_dongvat.title}}</h4>
+                    </a>                   
+                    <p><small><i>Số câu hỏi: {{ data_dongvat.num_of_ques}}</i></small></p>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="container">
+        <div class="list-title">
+                <h2>Kiến thức chung</h2>
+        </div>
+        <div class="row" style="margin-bottom: 30px" [routerLink]="['game', data_chung._id]" *ngFor="let data_chung of quizs_kienthucchung; let i = index">
+            <!-- <div class="logo-quiz col-lg-2 offset-lg-1" >
+                <img src="assets/images/thu1.jpg" alt="can't load">
+            </div> -->
+            <div class="infor-quiz col-lg-6 clearfix">
+                <!-- <a >
+                    <img src="assets/images/maru.jpg" alt="can't load">
+                </a> -->
+                <div style="margin-left: 20px;">
+                    <a href="#">
+                        <h4>{{ data_chung.title}}</h4>
+                    </a>
+                    <p><small><i>Số câu hỏi: {{ data_chung.num_of_ques}}</i></small></p>
                 </div>
             </div>
         </div>  

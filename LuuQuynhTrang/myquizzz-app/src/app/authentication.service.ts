@@ -81,13 +81,19 @@ export class AuthenticationService {
 
   public login(user: TokenPayload): Observable<any> {
     const base = this.http.post(`http://localhost:5000/login`, user)
+    console.log(base.pipe())
 
     const request = base.pipe(
       map((data: TokenResponse) => {
+        
         if (data.token) {
           this.saveToken(data.token)
         }
-        return data
+        if(!data){
+          alert("Hello! I am an alert box!!");
+        }
+        
+        return data       
       })
     )
 
@@ -96,8 +102,11 @@ export class AuthenticationService {
 
   public profile(): Observable<any> {
     return this.http.get(`http://localhost:5000/profile`, {
+      
       headers: { Authorization: ` ${this.getToken()}` }
+    
     })
+    
   }
 
   public logout(): void {

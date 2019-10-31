@@ -123,10 +123,10 @@ app.post('/login', (req,res)=>{
         })
         res.json({token:token})
       }else{
-        res.json({error:"User dose not exist"})
+        // res.send(false)
       }
     }else{
-      res.json({error:"User dose not exist"})
+      // res.send(false)
     }
   }).catch(err=>{
     res.send('error: '+err);
@@ -146,13 +146,45 @@ app.get('/profile', (req,res)=>{
     res.send('error: '+err)
   })
 })
+// app.get('/search/:title',(req,res)=>{
+//   var name = (req.params.title)
+//   console.log(/'name'/);
+//   Quiz.find({
+//     title: //
+//   }).then((quiz)=>{
+//     res.send(quiz)
+//   }, (e)=>{
+//     res.status(400).send(e);
+//   });
+// })
+app.get('/quizbyid/:_id',(req,res)=>{
+  console.log(req.params._id);
+  Quiz.find({
+    tags: req.params._id
+  }).then((quiz) => {
+    res.send(quiz);
+    console.log(req.params._id);
+  }, (e) => {
+    res.status(400).send(e);
+  });
+})
+app.get('/quizbyuser/:_id',(req,res)=>{
+  console.log(req.params._id);
+  Quiz.find({
+    postby: req.params._id
+  }).then((quiz) => {
+    res.send(quiz);
+    console.log(req.params._id);
+  }, (e) => {
+    res.status(400).send(e);
+  });
+})
 app.post('/makequiz', (req, res) => {
   var quiz = new Quiz({      
       title: req.body.title,
-      like: req.body.like,
-      tags: req.body.tag,
+      tags: req.body.tags,
       questions: req.body.questions,
-      num_of_ques: req.body.num,
+      num_of_ques: req.body.num_of_ques,
       postby: req.body.postby
   });
   // result = User.addUser(user);

@@ -3,16 +3,34 @@ a{
 }
 .top-menu{
     /* position: fixed; */
+    height: 70px;
     background-color:  #FFB53C;
     transition: all 0.2s;
    
 }
 .logo{
-    width: 90px;
-    height: 90px;
-    background: url('../../assets/images/gulogo.jpg');
-    background-size: cover;
+    width: 70px;
+    height: 70px;
+    /* background: url('/./assets/images/gulogo.jpg'); */
+    /* background-size: cover; */
+    color: white;
+    margin-top: 10px;
+    font-size: 40px;
+    font-family: Quicksand,Helvetica,Arial;
     float: left;
+}
+.inputsearch{
+    margin-top: 0px;
+    border-radius: 8px;
+    margin-left: 100px;
+    font-family: Quicksand,Helvetica,Arial;
+    /* color: white; */
+}
+.buttonsearch{
+    background-color: teal;
+    font-family: Quicksand,Helvetica,Arial;
+    color: white;
+    border-radius: 15px;
 }
 .main-menu ul>li{
     display: block;
@@ -27,11 +45,11 @@ a{
 .searchbar{
     margin-left: 30px;
     margin-bottom: auto;
-    margin-top: auto;
-    height: 55px;
+    margin-top: -5px;
+    height: 45px;
     background-color: white;
-    border-radius: 50px;
-    padding: 10px;
+    border-radius: 90px;
+    padding: 5px;
 }
 
 .search_input{
@@ -69,8 +87,8 @@ a{
     color:#e74c3c;
 }
 .signup-btn{
-    width: 108px;
-    height: 44px;
+    width: 90px;
+    height: 40px;
     padding: 0;
     line-height: 44px;
     border-radius: 8px;
@@ -78,7 +96,7 @@ a{
     display: inline-block;
     vertical-align: middle;
     /* margin: 0 24px 0 16px; */
-    margin-top: -12px;
+    margin-top: -34px;
     text-align: center;
     /* border-radius: 4px; */
     font-weight: bold;

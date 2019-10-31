@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable, NgZone } from '@angular/core';
-// import { Observable } from 'rxjs/Rx';
-// import * as _ from "lodash";
-declare var webkitSpeechRecognition: any;
+import {ActivatedRoute} from '@angular/router'
+import { HttpClient } from '@angular/common/http';
 
-
-// interface IWindow extends Window {
-//     webkitSpeechRecognition: any;
-//     SpeechRecognition: any;
-// }
 
 @Injectable()
 
@@ -19,56 +13,35 @@ declare var webkitSpeechRecognition: any;
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  // public reg: SpeechRecognition;
-  // public  typ = typeof SpeechRecognition;
-    // public reglist: SpeechGrammarList;
-    // public typp = typeof SpeechGrammarList ;
-  constructor() { 
+  valueS
+  quizz:any
+  datasearch : string[] = [];
+  constructor(private route: ActivatedRoute,private http: HttpClient) { 
     
   }
-  ngOnInit() { 
-    console.log("aaaaa");
-        var reg = new webkitSpeechRecognition() ||  new SpeechRecognition();
-        reg.lang = 'vi';
-        reg.interimResults = true;
-        let p = document.createElement('p');
-        const words = document.querySelector('.words');
-        words.appendChild(p);
-        reg.addEventListener('result', e=>{
-          // console.log(e.results);
-          const transcript = Array.from(e.results).map(result=>result[0]).map(result=>result.transcript).join('');
-          console.log(transcript);
-        });
-        reg.addEventListener('end',reg.start);
-        reg.start()
-        // reg.lang = 'vi';
-        // reg.start();
-        // reg.onresult = (event) => {
-        //     console.log(event.results[0][0].transcript);            
-        //     // this.index += event.results[0][0].transcript;
-
-           
-        // }        
-  }  
-  start() {
+  ngOnInit() {
     
-        console.log("aaaaa");
-        var reg = new webkitSpeechRecognition() ||  new SpeechRecognition();
-        reg.interimResults = true;
-        reg.
-        reg.lang = 'vi';
-        reg.start();
-        reg.onresult = (event) => {
-            console.log(event.results[0][0].transcript);            
-            // this.index += event.results[0][0].transcript;
-
-           
-        }        
-        // this.reg.onstart = function() {
-        //     console.log('Speech recognition service has started');
-        // }
-    
-    }
+    document.getElementById("dflex").style.display = 'none';
+    this.valueS = this.route.snapshot.paramMap.get('title');
+    console.log(this.valueS)
+    this.http.get('http://localhost:5000/quiz').
+    subscribe((data)=>{      
+      this.quizz = data;
+      console.log(this.quizz);
+      
+      for(var i = 0; i < this.quizz.length; i++){
+        var check = (this.quizz[i].title.toLowerCase()).indexOf(this.valueS.toLowerCase());
+        if(check != -1){
+          this.datasearch.push(this.quizz[i])
+          console.log(this.datasearch)
+        }
+        
+        
+      }
+      
+    });
+  }
+   
 
 }
 

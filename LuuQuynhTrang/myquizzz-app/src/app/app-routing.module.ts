@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'',component:HompageComponent },
   {path:'homepage',component:HompageComponent },
   {path:'user',component:UserComponent },
-  {path:'search',component:SearchComponent },
+  {path:'search/:title',component:SearchComponent },
   {path:'makeQuiz',component:TestComponent ,canActivate:[AuthGuardService]},
   {path:'profile',component:ProfileComponent , canActivate:[AuthGuardService]}
 ];

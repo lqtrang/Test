@@ -11,7 +11,7 @@ a{
     padding-top: 100px;
     width: 100%;
     min-height: 570px;
-    /* background-color: #FFB53C; */
+    
 }
 .start{
     margin-top: 50px;
@@ -24,6 +24,16 @@ a{
     width: 150px;
     height: 70px;    
 }
+.out{
+    color: white;
+    font-family: Quicksand,Helvetica,Arial;
+    background-color: #FFB53C;
+    width: 150px;
+    height: 70px;
+    border-radius: 10px; 
+    
+}
+
 .info-quiz{
     /* color: white; */
     font-family: Quicksand,Helvetica,Arial;
@@ -31,9 +41,9 @@ a{
 }
 .top-menu ul>li{
     display: block;
-    
+    font-family: Quicksand,Helvetica,Arial;
     text-decoration: none;
-    color: white;
+    /* color: white; */
     height: 15px;
     line-height: 40px;
     padding: 0 5px;
@@ -67,11 +77,24 @@ a{
     background-color: #FFB53C;
     display: inline-block;
     vertical-align: middle;
-    margin-top: -50px;
+    margin-top: -20px;
     text-align: center;
     font-weight: bold;
     color: white;
 } 
+.signup-btnnn{
+    width: 108px;
+    height: 44px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: #FFB53C;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -50px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
 /* //body */
 /* #questionn{
     width: 100% !important;
@@ -89,9 +112,7 @@ a{
     font-family: Quicksand,Helvetica,Arial;
     min-height: 265px;
 }
-.content-ques p{
-    
-}
+
 .answer{
     /* margin-top: 50px; */
     /* border-radius: 8px;    */
@@ -104,7 +125,7 @@ a{
     text-align: center;
     color: white;
     font-family: Quicksand,Helvetica,Arial;
-    background-color: #2F6DAE;
+    /* background-color: #2F6DAE; */
     border-radius: 10px;  
     margin-left: 3px;
     justify-content: center;
@@ -125,7 +146,7 @@ a{
     width: 317px;
     min-height: 285px;
     margin-right: 18px;    
-    background-color: #66CCC6;
+    /* background-color: #66CCC6; */
     display: flex;
 }
 .answ-3{
@@ -139,7 +160,7 @@ a{
     justify-content: center;
     align-items: center;
     min-height: 285px;
-    background-color: #D4546A;
+    /* background-color: #D4546A; */
     display: flex;
 }
 .answ-4{
@@ -151,7 +172,7 @@ a{
     align-items: center;
     width: 317px;
     min-height: 285px;    
-    background-color: #3A1F3C;
+    /* background-color: #3A1F3C; */
     display: flex;
     border-radius: 10px;  
 }
