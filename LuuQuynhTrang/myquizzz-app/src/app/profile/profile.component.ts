@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, UserDetails } from '../authentication.service'
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-profile',
@@ -9,28 +10,46 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileComponent implements OnInit {
   details: UserDetails
-  quizUser
-  constructor(private auth: AuthenticationService,private http: HttpClient) { }
+  quizUser:any = [];
+  constructor(private auth: AuthenticationService,private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
-    this.auth.profile().subscribe(
-      
+    this.auth.profile().subscribe(      
       user => {
         this.details = user
-        this.http.get('http://localhost:5000/quizbyuser/'+this.details._id).
-        subscribe((data)=>{      
-          this.quizUser = data;
-          console.log(this.quizUser);
-        });
+        this.rendQuiz()
 
       },
       err => {
         console.error(err)
-      }
-      
-    )
-    // console.log(this.quizUser)
-    
+      }      
+    )    
   }
+  rendQuiz(){
+  
+    this.http.get('http://localhost:5000/quizbyuser/'+this.details._id).
+    subscribe((data)=>{      
+      this.quizUser = data;
+      console.log(this.quizUser);
+    });
+  }
+  onDelete(index){
+    // var id=(document.getElementById("id_quiz").textContent)
+    console.log(index)
+    var result = confirm("Bạn có muốn xóa?"); 
+    if (result == true) { 
+      // console.log(id)
+      this.http.delete('http://localhost:5000/delete/quiz/'+index).subscribe(data => {
 
+      });
+     
+    } else { 
+      console.log("k xoas")
+    } 
+    this.rendQuiz();
+  }
+  onEdit(index){
+    console.log(index);
+    this.router.navigateByUrl('edit/quizz/'+index)
+  }
 }

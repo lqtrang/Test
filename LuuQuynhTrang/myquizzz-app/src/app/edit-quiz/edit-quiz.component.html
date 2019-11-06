@@ -1,0 +1,93 @@
+
+<app-header></app-header>
+<div class="start" id="start">
+    <div class="container">
+            <div class="row">
+                <div class="start-form col-lg-6 offset-lg-3">
+                        <form style="margin-left: 30px; margin-right: 30px" >
+                                <div class="title-login" style="margin-top: 10px;">
+                                    <h4>Cùng nhau tạo ra những câu hỏi bổ ích!</h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tiêu đề
+                                        <small>*</small>
+                                    </label>
+                                    
+                                    <input type="text" name="title" class="form-control" id="title-quiz" placeholder="" value="{{quizs_game.title}}">
+                                    <small id="emailHelp" class="form-text text-muted" ></small>
+                                  </div>
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Số câu hỏi
+                                      <small>*</small>
+                                  </label>
+                                  
+                                  <input type="text" name="num" class="form-control" id="num-of-ques" placeholder="" value="{{quizs_game.num_of_ques}}">
+                                  <small id="emailHelp" class="form-text text-muted" ></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Thể loại
+                                      <small>*</small>
+                                    </label>
+                                    <div class="checkbox" *ngFor="let tag of quiz_tag; let i = index">
+                                        <label><input type="checkbox" value="{{tag._id}}" class="hashtag">{{tag.title}}</label>
+                                    </div>
+                                </div>
+                                <a>
+                                    <!-- <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="onSubmit()" >Đăng nhập</button> -->
+                                    <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="letStart()" >Bắt đầu</button>
+                                </a>
+                                
+                         </form>
+                </div>
+            </div>
+            
+            
+        </div>
+
+</div>
+<div class="question" id="question" style="display: none;">
+    <div class="container col-lg-6 offset-lg-3 questionbb">
+        <form>
+            <div class="form-group" style="margin-top: 10px;">
+                <h5>Câu hỏi {{index+1}}</h5>
+                <input type="text" class="form-control" id="title-ques" placeholder="" value="{{quizs_game.questions[index]?.title}}">                      
+            </div>
+            <div class="form-group">
+                    <h5>Câu trả lời</h5>
+                <br>
+                <small>Hãy tích chọn đáp án đúng</small>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                <input type="text" class="form-control" id="ans1"  placeholder="Câu trả lời thứ nhất" >
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <input type="text" class="form-control" id="ans2"  placeholder="Câu trả lời thứ hai">
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <input type="text" class="form-control" id="ans3" placeholder="Câu trả lời thứ ba">
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+                <input type="text" class="form-control" id="ans4" placeholder="Câu trả lời thứ tư">
+            </div>                        
+            <a>
+                    <!-- <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="onSubmit()" >Đăng nhập</button> -->
+                <button  class="btn btn-primary btn-lg btn-block" style="margin-bottom: 40px; margin-top: 40px" (click)="restart()">Tiếp tục</button>
+            </a>
+           
+        </form>
+        
+    </div>
+</div>
+<div class="end container" id="end" style="display: none;">
+    <h4 style="text-align: center;">Chúc mừng bạn đã tạo xong một bộ câu hỏi</h4>
+    <a routerLink='/'>  
+        <button  class="out" >Kết thúc</button>
+    </a>
+</div>

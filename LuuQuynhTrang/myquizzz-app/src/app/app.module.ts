@@ -18,6 +18,7 @@ import { TestComponent } from './test/test.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
+import { EditQuizComponent } from './edit-quiz/edit-quiz.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProfileComponent } from './profile/profile.component';
     SearchComponent,
     TestComponent,
     ProfileComponent,
+    EditQuizComponent,
     
     // AuthenticationService
   ],

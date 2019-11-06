@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class TestComponent implements OnInit {
-  quiz_tag:any = {};
+  quiz_tag:any = [];
   details: UserDetails
   index = 0; 
   

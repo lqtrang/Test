@@ -194,4 +194,44 @@ app.post('/makequiz', (req, res) => {
     res.status(400).send(e);
   });
 });
+app.put('/edit/quizz/:_id', async (request, response) => {
+  try {
+      var quiz = await Quiz.findById(request.params._id).exec();
+      quiz.set(request.body);
+      var result = await quiz.save();
+      response.send(result);
+  } catch (error) {
+      response.status(500).send(error);
+  }
+});
+
+app.delete("/delete/quiz/:id", async (request, response) => {
+  try {
+      var result = await Quiz.deleteOne({ _id: request.params.id }).exec();
+      response.send(result);
+  } catch (error) {
+      response.status(500).send(error);
+  }
+});
+// app.delete('/delete/quiz/:_id',(req,res)=>{
+//   console.log(req.params._id)
+  
+//   // Quiz.findByIdAndRemove(req.params._id).then(quiz=>{
+//   //   if(!note) {
+//   //     return res.status(404).send({
+//   //         message: "Note not found with id " + req.params.noteId
+//   //     });
+//   //   }
+//   //   res.send({message: "Note deleted successfully!"});
+//   // }).catch(err => {
+//   //   if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+//   //       return res.status(404).send({
+//   //           message: "Note not found with id " + req.params.noteId
+//   //       });                
+//   //   }
+//   //   return res.status(500).send({
+//   //       message: "Could not delete note with id " + req.params.noteId
+//   //   });
+//   // });
+// })
 

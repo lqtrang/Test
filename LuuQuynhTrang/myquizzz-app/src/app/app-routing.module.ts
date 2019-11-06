@@ -9,6 +9,8 @@ import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuardService } from './auth-guard.service';
 import { TestComponent } from './test/test.component';
+import { EditQuizComponent } from './edit-quiz/edit-quiz.component';
+
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -19,6 +21,7 @@ const routes: Routes = [
   {path:'user',component:UserComponent },
   {path:'search/:title',component:SearchComponent },
   {path:'makeQuiz',component:TestComponent ,canActivate:[AuthGuardService]},
+  {path:'edit/quizz/:_id',component:EditQuizComponent },
   {path:'profile',component:ProfileComponent , canActivate:[AuthGuardService]}
 ];
 

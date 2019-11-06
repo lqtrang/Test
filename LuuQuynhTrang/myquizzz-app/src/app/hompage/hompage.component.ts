@@ -14,11 +14,11 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./hompage.component.css']
 })
 export class HompageComponent implements OnInit {
-  quizs_dongvat:any = {};
-  quizs_toanhoc:any = {};
-  quizs_tieuhoc:any = {};
-  quizs_hoahoc:any = {};
-  quizs_kienthucchung:any = {};
+  quizs_dongvat:any = [];
+  quizs_toanhoc:any = [];
+  quizs_tieuhoc:any = [];
+  quizs_hoahoc:any = [];
+  quizs_kienthucchung:any = [];
 
   constructor(private http: HttpClient) { 
     
